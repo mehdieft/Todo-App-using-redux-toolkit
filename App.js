@@ -4,9 +4,9 @@ import TodoHeader from './src/components/TodoHeader'
 export default function App() {
   
   return (
-      <View>
+      <SafeAreaView>
         <TodoHeader/>
-      </View>
+      </SafeAreaView>
   );
 }
 
