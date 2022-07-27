@@ -8,12 +8,9 @@ export default function App() {
 
   const RootApp=()=>{
     return (
-      <SafeAreaView>
-        <ScrollView>
+      <SafeAreaView style={{flex:1,marginTop:StatusBar.currentHeight}}>
           <TodoHeader/>
           <TodoList/>
-
-        </ScrollView>
       </SafeAreaView>
     )
   }

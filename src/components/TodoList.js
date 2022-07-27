@@ -1,26 +1,16 @@
 import {View,Text,FlatList,StyleSheet,TouchableOpacity} from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { deleteTask } from '../redux/taskSlice';
 
 export default function TodoList(){
     const Todos=useSelector((state)=>state.tasks)
-    console.log("todosss----->",Todos)
-    const data=[
-        {id:1,title:'this is simple test'},
-        {id:2,title:'this is simple test'},
-        {id:3,title:'this is simple test'},
-        {id:4,title:'this is simple test'},
-        {id:5,title:'this is simple test'},
-        {id:6,title:'this is simple test'},
-        {id:11,title:'this is simple test'},
-        {id:12,title:'this is simple test'},
-        {id:13,title:'this is simple test'},
-        {id:14,title:'this is simple test'},
-        {id:15,title:'this is simple test'},
-        {id:16,title:'this is simple test'},
-    ]
+    const dispatch=useDispatch()
+    
+ 
     const deleteItem=(id)=>{
-        console.log("this is id",id)
+        dispatch(deleteTask({id:id}))
+
     }
     const renderItem=({item})=>{
         return (
