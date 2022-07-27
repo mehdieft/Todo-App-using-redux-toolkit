@@ -1,4 +1,4 @@
-import {View,Text,FlatList,StyleSheet} from 'react-native';
+import {View,Text,FlatList,StyleSheet,TouchableOpacity} from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 
 export default function TodoList(){
@@ -6,12 +6,23 @@ export default function TodoList(){
         {id:1,title:'this is simple test'},
         {id:2,title:'this is simple test'},
         {id:3,title:'this is simple test'},
+        {id:4,title:'this is simple test'},
+        {id:5,title:'this is simple test'},
+        {id:6,title:'this is simple test'},
     ]
+    const deleteItem=(id)=>{
+        console.log("this is id",id)
+    }
     const renderItem=({item})=>{
         return (
             <View style={styles.todoContainer}>
                 <Text style={styles.todoText}>{item.title}</Text>
-                <AntDesign name="delete" size={24} color="black" />
+                <TouchableOpacity style={{marginHorizontal:15}} onPress={()=>{
+                    deleteItem(item.id)
+                }}>
+
+                <AntDesign name="delete" size={32} color="red" />
+                </TouchableOpacity>
             </View>
         )
     }
@@ -19,6 +30,7 @@ export default function TodoList(){
         <View>
             <Text>TodoList</Text>
             <FlatList 
+            nestedScrollEnabled
             style={styles.todos}
             data={data}
             keyExtractor={(item)=>item.id.toString()} 
@@ -34,19 +46,23 @@ const styles=StyleSheet.create({
         // alignItems: 'center'
     },
     todoContainer:{
-        backgroundColor:'#321123',
+        backgroundColor:'#df9fbf',
         borderRadius:5,
         marginTop:12,
         flexDirection: 'row',
         textAlign:'center',
-        paddingVertical:250
+        paddingVertical:30,
+        justifyContent:'space-between',
+        marginHorizontal:5
+
 
 
 
     },todoText:{
         color:'white',
-        fontSize: 16,
-        textAlign: 'center'
+        fontSize: 24,
+        textAlign: 'center',
+        marginHorizontal:15,
     },
 
 })
