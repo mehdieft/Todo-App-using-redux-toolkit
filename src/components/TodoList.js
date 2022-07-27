@@ -1,7 +1,10 @@
 import {View,Text,FlatList,StyleSheet,TouchableOpacity} from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
+import { useSelector } from 'react-redux';
 
 export default function TodoList(){
+    const Todos=useSelector((state)=>state.tasks)
+    console.log("todosss----->",Todos)
     const data=[
         {id:1,title:'this is simple test'},
         {id:2,title:'this is simple test'},
@@ -22,7 +25,7 @@ export default function TodoList(){
     const renderItem=({item})=>{
         return (
             <View style={styles.todoContainer}>
-                <Text style={styles.todoText}>{item.title}</Text>
+                <Text style={styles.todoText}>{item.name}</Text>
                 <TouchableOpacity style={{marginHorizontal:15}} onPress={()=>{
                     deleteItem(item.id)
                 }}>
@@ -38,7 +41,7 @@ export default function TodoList(){
             <FlatList 
             nestedScrollEnabled
             style={styles.todos}
-            data={data}
+            data={Todos}
             keyExtractor={(item)=>item.id.toString()} 
             renderItem={renderItem}
 
@@ -52,7 +55,7 @@ const styles=StyleSheet.create({
         // alignItems: 'center'
     },
     todoContainer:{
-        backgroundColor:'#df9fbf',
+        backgroundColor:'#0d1a26',
         borderRadius:5,
         marginTop:12,
         flexDirection: 'row',
