@@ -13,6 +13,7 @@
     "@expo-google-fonts/alex-brush": "^0.2.2",
     "@expo-google-fonts/inter": "^0.2.2",
     "@expo-google-fonts/roboto-condensed": "^0.2.2",
+    "@reduxjs/toolkit": "^1.8.3",
     "expo": "~45.0.0",
     "expo-app-loading": "~2.0.0",
     "expo-font": "~10.1.0",
@@ -20,10 +21,12 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
-    "react-native-web": "0.17.7"
+    "react-native-web": "0.17.7",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@types/react-redux": "^7.1.24"
   },
   "private": true
 }

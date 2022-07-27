@@ -9,6 +9,12 @@ export default function TodoList(){
         {id:4,title:'this is simple test'},
         {id:5,title:'this is simple test'},
         {id:6,title:'this is simple test'},
+        {id:11,title:'this is simple test'},
+        {id:12,title:'this is simple test'},
+        {id:13,title:'this is simple test'},
+        {id:14,title:'this is simple test'},
+        {id:15,title:'this is simple test'},
+        {id:16,title:'this is simple test'},
     ]
     const deleteItem=(id)=>{
         console.log("this is id",id)
